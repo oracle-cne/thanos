@@ -1,4 +1,4 @@
-FROM container-registry.oracle.com/os/oraclelinux:8
+FROM container-registry.oracle.com/os/oraclelinux:8 as builder
 
 WORKDIR $GOPATH/src/github.com/thanos-io/thanos
 
