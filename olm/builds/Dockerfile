@@ -1,10 +1,10 @@
-FROM container-registry.oracle.com/os/oraclelinux:8 as builder
+FROM container-registry.oracle.com/os/oraclelinux:8
 
 WORKDIR $GOPATH/src/github.com/thanos-io/thanos
 
 RUN dnf update -y && \
     dnf install make which git -y && \
-    dnf install golang-bin-1.18.9-1.module+el8.7.0+20911+27ed6f76 -y && \
+    dnf install golang -y && \
     dnf clean all && \
     rm -rf /var/cache/yum/*
 
