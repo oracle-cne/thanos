@@ -8,7 +8,7 @@ docker_tag=${registry}/${name}:v${version}
 
 pwd
 ls -lrt
-patch < olm/basic_auth.patch
+patch -p0 < olm/basic_auth.patch
 
 docker build --pull \
     --build-arg https_proxy=${https_proxy} \
