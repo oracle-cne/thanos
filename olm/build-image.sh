@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bash -x
 export GOPATH=$(go env GOPATH)
 
 name="thanos"
@@ -6,6 +6,8 @@ version="0.39.2"
 registry="container-registry.oracle.com/olcne"
 docker_tag=${registry}/${name}:v${version}
 
+pwd
+ls -lrt
 patch < olm/basic_auth.patch
 
 docker build --pull \
