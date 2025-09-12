@@ -6,9 +6,9 @@ version="0.39.2"
 registry="container-registry.oracle.com/olcne"
 docker_tag=${registry}/${name}:v${version}
 
-pwd
-ls -lrt
-patch -p0 < olm/basic_auth.patch
+#pwd
+#ls -lrt
+#patch -p0 < olm/basic_auth.patch
 
 docker build --pull \
     --build-arg https_proxy=${https_proxy} \
