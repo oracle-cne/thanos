@@ -9,4 +9,5 @@ imagePipeline(
   buildScript: "sh olm/build-image.sh",
   platforms: ['ol8'],
   architectures: ['x86_64', 'aarch64'],
+  publishImage: true,
 )
