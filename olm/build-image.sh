@@ -2,7 +2,7 @@
 export GOPATH=$(go env GOPATH)
 
 name="thanos"
-version="0.39.2"
+version="{{{ .major }}}.{{{ .minor }}}.{{{ .patch }}}"
 registry="container-registry.oracle.com/olcne"
 docker_tag=${registry}/${name}:v${version}
 
