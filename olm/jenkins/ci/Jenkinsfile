@@ -1,11 +1,13 @@
 @Library('olcne-pipeline') _
 import com.oracle.olcne.pipeline.BranchPattern
 
-String version = "{{{ .major }}}.{{{ .minor }}}.{{{ .patch }}}"
+String version = "0.39.2"
 
 imagePipeline(
   branchPattern: new BranchPattern(master: 'oracle/release/' + version, feature: '(?!^release/.*$)(^.*$)'),
   containers: [('container-registry.oracle.com/olcne/thanos:v' + version): 'olcne/thanos:v' + version],
   buildScript: "sh olm/build-image.sh",
+  platforms: ['ol8'],
+  architectures: ['x86_64', 'aarch64'],
   publishImage: true,
 )

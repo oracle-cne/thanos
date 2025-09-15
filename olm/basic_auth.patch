@@ -1,0 +1,20 @@
+diff --git pkg/extgrpc/client.go pkg/extgrpc/client.go
+index a6dcc7b6..373d0cdb 100644
+--- pkg/extgrpc/client.go
++++ pkg/extgrpc/client.go
+@@ -18,6 +18,7 @@ import (
+ 	"google.golang.org/grpc/keepalive"
+ 
+ 	grpcserver "github.com/thanos-io/thanos/pkg/server/grpc"
++        "github.com/thanos-io/thanos/pkg/basicauth"
+ 	"github.com/thanos-io/thanos/pkg/tls"
+ 	"github.com/thanos-io/thanos/pkg/tracing"
+ )
+@@ -77,6 +78,7 @@ func StoreClientGRPCOpts(logger log.Logger, reg prometheus.Registerer, tracer op
+ 		reg.MustRegister(grpcMets)
+ 	}
+ 
++	dialOpts = basicauth.AddBasicAuthDialOption(dialOpts)
+ 	if !secure {
+ 		return append(dialOpts, grpc.WithTransportCredentials(insecure.NewCredentials())), nil
+ 	}
