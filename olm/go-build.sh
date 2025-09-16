@@ -15,5 +15,5 @@ ldflags="
         -X github.com/prometheus/common/version.BuildUser=${USER}@${HOST}
         -X github.com/prometheus/common/version.BuildDate=${BUILD_DATE}"
 
-go build -a -tags netgo -trimpath=false -v -o bin/thanos \
-	-ldflags "${ldflags}" cmd/thanos
+go build -a -tags netgo -trimpath=false -v -o ./bin/thanos \
+	-ldflags "${ldflags}" ./cmd/thanos

@@ -3,7 +3,7 @@ FROM container-registry.oracle.com/os/oraclelinux:8 as builder
 WORKDIR $GOPATH/src/github.com/thanos-io/thanos
 
 RUN dnf update -y && \
-    dnf install make which git -y && \
+    dnf install hostname make which git -y && \
     dnf install golang -y && \
     dnf clean all && \
     rm -rf /var/cache/yum/*
@@ -11,7 +11,6 @@ RUN dnf update -y && \
 COPY . $GOPATH/src/github.com/thanos-io/thanos
 
 RUN sh olm/go-build.sh
-#RUN make build
 
 # -----------------------------------------------------------------------------
 
