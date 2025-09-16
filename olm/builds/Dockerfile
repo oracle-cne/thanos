@@ -10,7 +10,8 @@ RUN dnf update -y && \
 
 COPY . $GOPATH/src/github.com/thanos-io/thanos
 
-RUN make build
+RUN sh olm/go-build.sh
+#RUN make build
 
 # -----------------------------------------------------------------------------
 
@@ -23,7 +24,7 @@ RUN microdnf update -y && \
 COPY LICENSE SECURITY.md THIRD_PARTY_LICENSES.txt /licenses/
 COPY olm/SECURITY.md /licenses/ORACLE_SECURITY.md
 
-COPY --from=builder /root/go/bin/thanos /bin/thanos
+COPY --from=builder $GOPATH/src/github.com/thanos-io/thanos/bin/thanos /bin/thanos
 
 USER nobody
 
