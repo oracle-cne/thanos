@@ -2,11 +2,9 @@
 export GOPATH=$(go env GOPATH)
 
 name="thanos"
-version="{{{ .major }}}.{{{ .minor }}}.{{{ .patch }}}"
+version="{{{ .major }}}.{{{ .minor }}}.{{{ .patch }}}
 registry="container-registry.oracle.com/olcne"
 docker_tag=${registry}/${name}:v${version}
-
-patch -p0 < olm/go_extra_flags.patch
 
 docker build --pull \
     --build-arg https_proxy=${https_proxy} \
