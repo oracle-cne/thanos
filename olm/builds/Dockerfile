@@ -10,7 +10,7 @@ RUN dnf update -y && \
 
 COPY . $GOPATH/src/github.com/thanos-io/thanos
 
-RUN sh olm/go-build.sh
+RUN ls -lrt && sh ./go-build.sh
 #RUN make build
 
 # -----------------------------------------------------------------------------
