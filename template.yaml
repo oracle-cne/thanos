@@ -4,6 +4,3 @@ BranchTemplate: feature/${major}.${minor}.${patch}
 MasterBranchTemplate: oracle/release/${major}.${minor}.${patch}
 TemplateDirectory: ${major}.${minor}.templates
 SemverTagFilter: "> 0.39.1"
-Cherries:
-  - Cherries:
-      - Commit: aaa03fff2f6591de8100aa7026c9bf017bfdedbb
