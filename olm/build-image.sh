@@ -1,7 +1,7 @@
 #!/usr/bin/env bash -x
 
 name="thanos"
-version="0.41.0
+version="0.41.0"
 registry="container-registry.oracle.com/olcne"
 docker_tag=${registry}/${name}:v${version}
 
