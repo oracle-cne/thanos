@@ -1,5 +1,4 @@
 #!/usr/bin/env bash -x
-export GOPATH=$(go env GOPATH)
 
 name="thanos"
 version="0.41.0
