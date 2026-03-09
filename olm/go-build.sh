@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 mkdir -p bin
-version="0.41.0
+version="0.41.0"
 
 git config --global --add safe.directory $(pwd)
 
